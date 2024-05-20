@@ -22,29 +22,32 @@ function Install-Ubuntu-Package {
 
 function Set-Git-Configuration-In-Ubuntu {
   Write-Host "Configuring Git in Ubuntu:" -ForegroundColor "Green";
-  wsl git config --global init.defaultBranch "main";
-  wsl git config --global user.name $Config.GitUserName;
-  wsl git config --global user.email $Config.GitUserEmail;
-  wsl git config --global credential.helper "/mnt/c/Program\ Files/Git/mingw64/libexec/git-core/git-credential-manager-core.exe";
-  wsl git config --list;
+  # wsl git config --global init.defaultBranch "main";
+  # wsl git config --global user.name $Config.GitUserName;
+  # wsl git config --global user.email $Config.GitUserEmail;
+  # wsl git config --global credential.helper "/mnt/c/Program\ Files/Git/mingw64/libexec/git-core/git-credential-manager-core.exe";
+  # wsl git config --list;
   Write-Host "Git was successfully configured in Ubuntu." -ForegroundColor "Green";
 }
 
 function Install-VSCode-Extensions-In-WSL {
   Write-Host "Installing Visual Studio Code extensions in WSL:" -ForegroundColor "Green";
 
-  wsl code --install-extension ue.alphabetical-sorter;
-  wsl code --install-extension ms-azuretools.vscode-docker;
-  wsl code --install-extension dbaeumer.vscode-eslint;
-  wsl code --install-extension eamodio.gitlens;
-  wsl code --install-extension golang.go;
-  wsl code --install-extension oderwat.indent-rainbow;
-  wsl code --install-extension ritwickdey.liveserver;
-  wsl code --install-extension davidanson.vscode-markdownlint;
-  wsl code --install-extension esbenp.prettier-vscode;
-  wsl code --install-extension jock.svg;
-  wsl code --install-extension bradlc.vscode-tailwindcss;
-  wsl code --install-extension rangav.vscode-thunder-client;
+  #code --install-extension "ue.alphabetical-sorter";
+#code --install-extension "formulahendry.auto-rename-tag";
+#code --install-extension "ms-azuretools.vscode-docker";
+#code --install-extension "usernamehw.errorlens";
+code --install-extension "eamodio.gitlens";
+code --install-extension "oderwat.indent-rainbow";
+#code --install-extension "davidanson.vscode-markdownlint";
+#code --install-extension "robole.markdown-snippets";
+#code --install-extension "pkief.material-icon-theme";
+#code --install-extension "ms-vscode.powershell";
+code --install-extension "esbenp.prettier-vscode";
+#code --install-extension "ms-vscode-remote.remote-containers";
+code --install-extension "ms-vscode-remote.remote-wsl";
+#code --install-extension "jock.svg";
+#code --install-extension "rangav.vscode-thunder-client";
 }
 
 function Install-Volta-In-Ubuntu {
@@ -263,9 +266,6 @@ Install-VSCode-Extensions-In-WSL;
 
 Install-Volta-In-Ubuntu;
 Install-Nodejs-Packages-In-Ubuntu;
-
-Install-Golang-In-Ubuntu;
-Install-Hugo-In-Ubuntu;
 
 Install-Plug-Vim-In-Ubuntu;
 Copy-Initial-Vimrc-In-Ubuntu;

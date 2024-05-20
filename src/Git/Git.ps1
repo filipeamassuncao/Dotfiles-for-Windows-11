@@ -1,8 +1,8 @@
 function Set-Git-Configuration {
   Write-Host "Configuring Git:" -ForegroundColor "Green";
-  git config --global init.defaultBranch "main";
-  git config --global user.name $Config.GitUserName;
-  git config --global user.email $Config.GitUserEmail;
+  # git config --global init.defaultBranch "main";
+  # git config --global user.name $Config.GitUserName;
+  # git config --global user.email $Config.GitUserEmail;
   Write-Host "Git was successfully configured." -ForegroundColor "Green";
 }
 

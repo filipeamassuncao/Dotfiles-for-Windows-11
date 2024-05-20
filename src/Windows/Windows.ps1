@@ -124,7 +124,7 @@ function Set-Custom-Regional-Format {
   $RegPath = "HKCU:\Control Panel\International";
 
   Set-ItemProperty -Path $RegPath -Name "iFirstDayOfWeek" -Value "0";
-  Set-ItemProperty -Path $RegPath -Name "sShortDate" -Value "yyyy-MM-dd";
+  Set-ItemProperty -Path $RegPath -Name "sShortDate" -Value "dd-MM-yyyy";
   Set-ItemProperty -Path $RegPath -Name "sLongDate" -Value "dddd, d MMMM, yyyy";
   Set-ItemProperty -Path $RegPath -Name "sShortTime" -Value "HH:mm";
   Set-ItemProperty -Path $RegPath -Name "sTimeFormat" -Value "HH:mm:ss";
@@ -162,6 +162,6 @@ Set-Multitasking-Configuration;
 Set-Classic-ContextMenu-Configuration;
 Set-SetAsBackground-To-Extended-ContextMenu;
 Disable-RecentlyOpenedItems-From-JumpList;
-Set-Power-Configuration;
+# Set-Power-Configuration;
 Set-Custom-Regional-Format;
-Rename-PC;
+# Rename-PC;

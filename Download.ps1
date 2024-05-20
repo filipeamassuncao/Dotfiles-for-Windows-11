@@ -14,6 +14,7 @@ $GitUserName = Read-Host -Prompt "Input your Git user name here";
 $GitUserEmail = Read-Host -Prompt "Input your Git user email here";
 
 $ValidDisks = Get-PSDrive -PSProvider "FileSystem" | Select-Object -ExpandProperty "Root";
+
 do {
   Write-Host "Choose the location of your development workspace:" -ForegroundColor "Green";
   Write-Host $ValidDisks -ForegroundColor "Green";
@@ -25,6 +26,7 @@ while (-not ($ValidDisks -Contains $WorkspaceDisk));
 if (Test-Path $DotfilesFolder) {
   Remove-Item -Path $DotfilesFolder -Recurse -Force;
 }
+
 New-Item $DotfilesFolder -ItemType directory;
 
 # Download Dotfiles repository as Zip
